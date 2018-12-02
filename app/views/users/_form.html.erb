@@ -40,6 +40,11 @@
     <%= f.label "Favorite Class" %><br />
     <%= f.text_field :favorite_class, autocomplete: "off", :required => true, id: :user_favorite_class, :class => 'form-control' %>
   </div>
+  
+  <div class="form-group col-md-6">
+    <%= f.label "Password" %><br />
+    <%= f.text_field :password, autocomplete: "off", :required => true, id: :user_password, :class => 'form-control' %>
+  </div>
 
   <div class="form-group actions">
     <%= f.submit "Create User", :class => "btn btn-primary" %>
