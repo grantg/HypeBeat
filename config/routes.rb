@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :users
   authenticated :user do
     root to: 'users#index', as: :authenticated_root
