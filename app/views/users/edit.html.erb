@@ -6,30 +6,36 @@
     <%= form_for(:user, url: update_user_path, :method => :POST, :html => {:id => 'avatar-form'}) do |f| %>
       
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, :placeholder => "Email", :class => "form-control" %>
       </div>
           
       <div class="form-row">
         <div class="col">
-          <%= f.email_field :birth_date, autofocus: true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+          <%= f.date_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :favorite_class, autofocus: true, :placeholder => "Favorite Class", :class => "form-control" %>
+          <%= f.text_field :favorite_class, :required => true, :placeholder => "Favorite Class", :class => "form-control" %>
+        </div>
+      </div>
+      <br>
+      
+      <div class="form-row">
+        <div class="col">
+          <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password (Min 6 chars)", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm new password", :class => "form-control" %>
         </div>
       </div>
       <br>
       
       <div class="form-group">
-        <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New Password (6 characters minimum)", :class => "form-control" %>
-      </div>
-    
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm New Password", :class => "form-control" %>
+        <%= f.text_area :bio, :placeholder => "Tell us about yourself! In 250 characters or less*", :maxlength => 250, :required => true, :class => "form-control" %>
       </div>
     
       <div class="form-group">
         <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
-        <small id="emailHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
+        <small id="passwordHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
       </div>
     
       <div class="actions">

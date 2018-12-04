@@ -12,7 +12,7 @@
           
       <div class="form-row">
         <div class="col">
-          <%= f.email_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
+          <%= f.date_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
         <div class="col">
           <%= f.text_field :favorite_class, :placeholder => "Favorite Class", :required => true, :class => "form-control" %>
@@ -20,16 +20,22 @@
       </div>
       <br>
       
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Password (6 characters minimum)", :class => "form-control" %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Password (6 characters minimum)", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm password", :class => "form-control" %>
+        </div>
       </div>
-    
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm password", :class => "form-control" %>
-      </div>
+      <br>
     
       <div class="form-group">
         <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.text_area :bio, :placeholder => "Tell us about yourself! In 250 characters or less*", :maxlength => 250, :required => true, :class => "form-control" %>
       </div>
     
       <div class="actions">
