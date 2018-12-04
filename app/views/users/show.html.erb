@@ -1,18 +1,15 @@
 <div class="col-md-12">
     <div class="container col-md-8 offset-md-2">
-        <h2 class="h2 text-center">User Profile Template</h2>
-        <table class="table col-md-6">
-            <tr>
-                <td>Name:</td>
-                <td><%= @user.fname %> <%= @user.lname %></td>
-            </tr>
+        <h2 class="h2 text-center"><%= @user.fname %> <%= @user.lname %></h2>
+        <br>
+        <table class="table col-md-6 offset-md-3">
             <tr>
                 <td>Email:</td>
                 <td><%= @user.email %></td>
             </tr>
             <tr>
                 <td>Birthday:</td>
-                <td><%= @user.birth_date %></td>
+                <td><%= @user.birth_date.strftime("%m/%d/%Y") %></td>
             </tr>
             <tr>
                 <td>Favorite Class:</td>
@@ -23,8 +20,13 @@
                 <td><%= @user.bio %></td>
             </tr>
         </table>
-        
-        <%= link_to 'Back', users_path, :class => "btn btn-light btn-sm" %>
+        <div class="text-center">
+            <%= link_to 'Back', users_path, :class => "btn btn-light btn-sm" %> 
+            <% if @user.id == current_user.id %>
+                <%= link_to 'Edit My Profile', edit_user_path(current_user), :class => "btn btn-sm btn-light" %>
+            <% else %>
+            <% end %>
+        </div>
     </div>
 </div>
 <p id="notice"><%= notice %></p>

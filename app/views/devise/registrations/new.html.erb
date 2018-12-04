@@ -18,7 +18,17 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email or data with anyone else.</small>
       </div>
-    
+      
+      <div class="form-row">
+        <div class="col">
+          <%= f.date_field :birth_date, autofocus: true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.text_field :favorite_class, autofocus: true, :placeholder => "Favorite Class", :class => "form-control" %>
+        </div>
+      </div>
+      <br>
+      
       <div class="form-group">
         <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Password (6 characters minimum)", :class => "form-control" %>
       </div>
@@ -33,7 +43,7 @@
     <% end %>
     
     <div class="text-center">
-      <%= link_to "Log In", new_session_path(resource_name), :class => "btn btn-sm btn-light text-center" %>
+      <%= link_to "Log In Instead", new_session_path(resource_name), :class => "btn btn-sm btn-light text-center" %>
     </div>
   </div>
 </div>
