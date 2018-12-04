@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     
     def get_info
         if user_signed_in?
-            @getUserInfo = Comment.where(:sent_to => 2).joins(:users).merge(User.where(:id=>2))
+            @getUserInfo = User.where()
         end
     end
     
