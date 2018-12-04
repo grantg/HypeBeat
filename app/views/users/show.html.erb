@@ -23,10 +23,23 @@
                 <td><%= @user.bio %></td>
             </tr>
         </table>
-        
+        <% @getUserComments.each do |comment| %>
+        <%= comment.users_id %>
+        <% end %>
+        <%= form_for Comment.new, url: create_comment_path do |f| %>
+            <div class="form-group col-md-6">
+            <%= f.label "Sent to" %><br />
+            <%= f.text_field :sent_to, autocomplete: "off", :required => true, id: :comment_sent_to, :class => 'form-control' %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
         <%= link_to 'Back', users_path, :class => "btn btn-light btn-sm" %>
     </div>
 </div>
+
+
 <p id="notice"><%= notice %></p>
 
 

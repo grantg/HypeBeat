@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    user_page_id = params[:id]
+    @getUserComments = User.get_comments(user_page_id)
   end
 
   # GET /users/new
