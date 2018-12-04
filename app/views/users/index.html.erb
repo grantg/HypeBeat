@@ -1,6 +1,5 @@
 <div class="col-md-12">
   <div class="container col-md-8 offset-md-2">
-    <p id="notice"><%= notice %></p>
     
     <h2 class="h2 text-center">All Users</h2>
     
@@ -22,5 +21,8 @@
         <% end %>
       </tbody>
     </table>
+    <div class="text-center">
+      <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, :class => 'btn btn-light btn-sm' %> 
+    </div>
   </div>
 </div>

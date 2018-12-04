@@ -11,6 +11,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.1.3'
 #jquery
 gem 'jquery-rails'
+#toastr
+gem 'toastr-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
