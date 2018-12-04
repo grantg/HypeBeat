@@ -1,5 +1,9 @@
-<h1>Editing User</h1>
+<div class="col-md-12">
+  <div class="offset-md-4 col-md-4 container-login">
+    <h2 class="h2 text-center">Edit My Profile</h2>
+    <br>
 
+<<<<<<< HEAD
 <%= form_for(:user, url: update_user_path, :method => :POST, :html => {:id => 'avatar-form'}) do |f| %>
   
       <div class="form-group col-md-6">
@@ -44,3 +48,50 @@
 
 <%= link_to 'Show', @user, :class => 'btn btn-default' %> |
 <%= link_to 'Back', users_path, :class => 'btn btn-default' %>
+=======
+    <%= form_for(:user, url: update_user_path, :method => :POST, :html => {:id => 'avatar-form'}) do |f| %>
+      
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
+      </div>
+          
+      <div class="form-row">
+        <div class="col">
+          <%= f.email_field :birth_date, autofocus: true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.text_field :favorite_class, autofocus: true, :placeholder => "Favorite Class", :class => "form-control" %>
+        </div>
+      </div>
+      <br>
+      
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New Password (6 characters minimum)", :class => "form-control" %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm New Password", :class => "form-control" %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
+        <small id="emailHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit "Update", :class => "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+    
+    <div class="text-center">
+      <%= link_to 'My Profile', @user, :class => 'btn btn-light btn-sm' %> 
+      <%= link_to 'Back', users_path, :class => 'btn btn-light btn-sm' %>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>Unhappy with your experience?</p>
+      <%= button_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger btn-block" %>
+    </div>
+  </div>
+</div>
+>>>>>>> 4a36bdfb22b52376aed5699796c42301145ac84c
