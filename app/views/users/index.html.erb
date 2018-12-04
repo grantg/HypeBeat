@@ -13,7 +13,7 @@
             <td><strong>Email:</strong> <%= user.email %></td>
             
             <td>
-              <%= link_to 'Show', user, :class => "btn btn-sm btn-light" %> 
+              <%= link_to 'View Profile', user, :class => "btn btn-sm btn-success" %> 
               <%= link_to 'Edit', edit_user_path(user), :class => "btn btn-sm btn-light" %> 
               <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-light" %>
             </td>
