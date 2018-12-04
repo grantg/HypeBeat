@@ -7,34 +7,34 @@
       
       <div class="form-row">
         <div class="col">
-          <%= f.text_field :fname, autofocus: true, :placeholder => "First Name", :class => "form-control" %>
+          <%= f.text_field :fname, autofocus: true, :required => true, :placeholder => "First Name", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :lname, autofocus: true, :placeholder => "Last Name", :class => "form-control" %>
+          <%= f.text_field :lname, :required => true, :placeholder => "Last Name", :class => "form-control" %>
         </div>
       </div><br>
       
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
+        <%= f.email_field :email, :required => true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email or data with anyone else.</small>
       </div>
       
       <div class="form-row">
         <div class="col">
-          <%= f.date_field :birth_date, autofocus: true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+          <%= f.date_field :birth_date, :required => true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :favorite_class, autofocus: true, :placeholder => "Favorite Class", :class => "form-control" %>
+          <%= f.text_field :favorite_class, :required => true, :placeholder => "Favorite Class", :class => "form-control" %>
         </div>
       </div>
       <br>
       
       <div class="form-group">
-        <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Password (6 characters minimum)", :class => "form-control" %>
+        <%= f.password_field :password, autocomplete: "new-password", :required => true,:placeholder => "Password (6 characters minimum)", :class => "form-control" %>
       </div>
     
       <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm password", :class => "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", :required => true, :placeholder => "Confirm password", :class => "form-control" %>
       </div>
     
       <div class="form-group">

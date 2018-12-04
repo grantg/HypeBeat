@@ -6,16 +6,16 @@
       <%= devise_error_messages! %>
           
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "Email", :class => "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, :placeholder => "Email", :class => "form-control" %>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email or data with anyone else.</small>
       </div>
           
       <div class="form-row">
         <div class="col">
-          <%= f.email_field :birth_date, autofocus: true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+          <%= f.email_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :favorite_class, autofocus: true, :placeholder => "Favorite Class", :class => "form-control" %>
+          <%= f.text_field :favorite_class, :placeholder => "Favorite Class", :required => true, :class => "form-control" %>
         </div>
       </div>
       <br>
