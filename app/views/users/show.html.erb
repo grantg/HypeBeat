@@ -23,13 +23,15 @@
                 <td><%= @user.bio %></td>
             </tr>
         </table>
-        <% @getUserComments.each do |comment| %>
-        <%= comment.users_id %>
+        <% @getUserInfo.each do |comment| %>
+        <div><%= @getUserInfo %></div>
+       <div><%= comment.comment_text %></div>
         <% end %>
         <%= form_for Comment.new, url: create_comment_path do |f| %>
             <div class="form-group col-md-6">
-            <%= f.label "Sent to" %><br />
-            <%= f.text_field :sent_to, autocomplete: "off", :required => true, id: :comment_sent_to, :class => 'form-control' %>
+            <%= f.hidden_field :users_id, :value => @user.id %>
+            <%= f.hidden_field :sent_to, autocomplete: "off", :required => true, id: :comment_sent_to, :value => @user.id, :class => 'form-control' %>
+            <%= f.text_area :comment_text, placeholder: "Write your comment here...", :class => 'form-control' %>
           </div>
           <div class="actions">
             <%= f.submit %>

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   
   post '/user/update/:id' => 'users#update', :as => :update_user
   post '/users/new' => 'users#create', :as => :create_user
+  post '/comments/new' => 'comments#create', :as => :create_comment
   
   resources :users, except: :create
-  resources :comments
+  resources :comments, except: :create
 end
