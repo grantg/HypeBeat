@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Security Project</title>
+    <title>Super Breaks-A-Lot 9000</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,13 @@
   <body>
     <%= yield %>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% unless flash.empty? %>
+       <script type="text/javascript">
+            <% flash.each do |f| %>
+  	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+  	     	 toastr['<%= type %>']('<%= f[1] %>', '', {"newestOnTop": true, "positionClass": "toast-top-center"});
+  	   <% end %>
+       </script>
+    <% end %>
   </body>
 </html>

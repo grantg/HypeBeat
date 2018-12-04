@@ -1,25 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="text-center">Users</h1>
-
-<table class="table text-center">
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-  <%= link_to 'New User', new_user_path, :class => "btn btn-primary"%>
-
+<div class="col-md-12">
+  <div class="container col-md-8 offset-md-2">
+    
+    <h2 class="h2 text-center">All Users</h2>
+    
+    <table class="table text-center">
+    
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><strong>Name:</strong> <%= user.fname %> <%= user.lname %></td>
+            
+            <td><strong>Email:</strong> <%= user.email %></td>
+            
+            <td>
+              <%= link_to 'Show', user, :class => "btn btn-sm btn-light" %> 
+              <%= link_to 'Edit', edit_user_path(user), :class => "btn btn-sm btn-light" %> 
+              <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-light" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= link_to 'Logout'.html_safe, destroy_user_session_path, method: :delete, :class => 'btn btn-light btn-sm' %> 
+    </div>
+  </div>
+</div>
