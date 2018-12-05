@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :authenticate_user!, :get_data
     
-    
     def get_data
         if user_signed_in?
             @getFName = current_user.fname
@@ -14,4 +13,5 @@ class ApplicationController < ActionController::Base
             @getPhoneNum = current_user.phone_number
         end
     end
+    
 end
