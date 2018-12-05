@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
             @getState = current_user.state
             @getCity = current_user.city
             @getZip = current_user.zip_code
+            @getPhoneNum = current_user.phone_number
         end
     end
 end
