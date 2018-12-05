@@ -14,8 +14,15 @@
         <div class="col">
           <%= f.date_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
+      </div>
+      
+      <div class="form-row">
         <div class="col">
+          <%= f.text_field :fname, autocomplete: "fname", :required => true, :placeholder => "First Name", :class => "form-control" %>
         </div>
+        <div class="col">
+          <%= f.text_field :lname, autocomplete: "lname", :required => true, :placeholder => "Last Name", :class => "form-control" %>
+        </div>        
       </div>
       <br>
       
