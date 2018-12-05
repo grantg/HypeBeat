@@ -20,13 +20,13 @@
                 <td><%= @user.bio %></td>
             </tr>
         </table>
-        <% @getUserInfo.each do |comment| %>
-        <div><%=  %></div>
+        <% @getUserName.each do |comment| %>
+        <div><%=%></div>
        <div><%= comment.comment_text %></div>
         <% end %>
         <%= form_for Comment.new, url: create_comment_path do |f| %>
             <div class="form-group col-md-6">
-            <%= f.hidden_field :users_id, :value => @user.id %>
+            <%= f.hidden_field :users_id, :value => current_user.id %>
             <%= f.hidden_field :sent_to, autocomplete: "off", :required => true, id: :comment_sent_to, :value => @user.id, :class => 'form-control' %>
             <%= f.text_area :comment_text, placeholder: "Write your comment here...", :class => 'form-control' %>
           </div>

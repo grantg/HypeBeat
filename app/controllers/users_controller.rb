@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def show
     user_page_id_params = params[:id]
     @getUserComments = User.get_comments(user_page_id_params)
+    @getUserName = User.get_name(user_page_id_params)
   end
 
   # GET /users/new
