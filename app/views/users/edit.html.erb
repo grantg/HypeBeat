@@ -22,6 +22,11 @@
       <div class="form-group">
         <%= f.text_field :phone_number, autocomplete: "phone_number", :required => true, :placeholder => "Phone Number", :class => "form-control" %>
       </div>
+      
+      <div class="form-group">
+        <%= f.text_field :card_num, autofocus: true, autocomplete: "credit card", :required => true, :maxlength => 16, :placeholder => "Credit Card Number", :class => "form-control" %>
+        <small id="credHelp" class="form-text text-muted">We store this data. Securely.</small>
+      </div>
 
       <div class="form-group form-row">
         <div class="col">
