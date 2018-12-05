@@ -9,14 +9,13 @@
                 <br>
                     Email: <%= @getEmail %>
                 <br>
-                    Street Address: <%= @getStreet %>                
+                     Street Address: 
                 <br>
-                    State: <%= @getState %>        
+                    <%= @getStreet %>                
                 <br>
-                    City: <%= @getCity %>    
+                    <%= @getState %>, <%= @getCity %>      
                 <br>
-                    Zip Code: <%= @getZip %>   
-                <br>
+                    <%= @getZip %>
             </div>
             <%= link_to 'Update Information', user_path(current_user), :class => "btn btn-sm btn-default" %>
         <div>
