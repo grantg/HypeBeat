@@ -11,14 +11,6 @@
                 <td>Birthday:</td>
                 <td><%= @user.birth_date.strftime("%m/%d/%Y") %></td>
             </tr>
-            <tr>
-                <td>Favorite Class:</td>
-                <td><%= @user.favorite_class %></td>
-            </tr>
-            <tr>
-                <td>Bio:</td>
-                <td><%= @user.bio %></td>
-            </tr>
         </table>
         <div class="text-center">
             <%= link_to 'Back', users_path, :class => "btn btn-light btn-sm" %> 
