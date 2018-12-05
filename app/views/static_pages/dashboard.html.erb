@@ -1,23 +1,37 @@
 <div class="container">
     <div class="container-fluid" >
-           <div>
-                Current Account Information:
-                <br>
-                    First Name: <%= @getFName %>
-                <br>
-                    Last Name: <%= @getLName %>
-                <br>
-                    Email: <%= @getEmail %>
-                <br>
-                    Phone Number: <%= @getPhoneNum %>
-                <br>
-                    Street Address: 
-                <br>
-                    <%= @getStreet %>                
-                <br>
-                    <%= @getState %>, <%= @getCity %>      
-                <br>
-                    <%= @getZip %>
+        <br>
+        <h2 class="h2 text-center">Hey, <%= @getFName %>!</h2>
+           <br>
+           <div class="col-md-8 offset-md-4">
+                <div class="row">
+                    <div class="col-md-4">First Name:</div>
+                    <div class="col-md-4"><%= @getFName %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Last Name:</div>
+                    <div class="col-md-4"><%= @getLName %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Email:</div>
+                    <div class="col-md-4"><%= @getEmail %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Phone Number:</div>
+                    <div class="col-md-4"><%= number_to_phone(@getPhoneNum, area_code: true) %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Address:</div>
+                    <div class="col-md-4"><%= @getStreet %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"><%= @getCity %>, <%= @getState %></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"><%= @getZip %></div>
+                </div>
             </div>
             <%= link_to 'Update Information', user_path(current_user), :class => "btn btn-sm btn-default" %>
         <div>
