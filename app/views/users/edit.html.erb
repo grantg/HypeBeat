@@ -4,19 +4,19 @@
     <h2 class="h2 text-center">Edit My Profile</h2>
     <br>
 
-    <%= form_for(:user, url: update_user_path, :method => :POST, :html => {:id => 'avatar-form'}) do |f| %>
+    <%= form_for(:user, url: {action: 'update'}, :method => :POST, :html => {:id => 'avatar-form'}) do |f| %>
       
       <div class="form-group">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", :required => true, :placeholder => "Email", :class => "form-control" %>
       </div>
           
-      <div class="form-row">
+      <div class="form-group form-row">
         <div class="col">
           <%= f.date_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
       </div>
-      
-      <div class="form-row">
+
+      <div class="form-group form-row">
         <div class="col">
           <%= f.text_field :fname, autocomplete: "fname", :required => true, :placeholder => "First Name", :class => "form-control" %>
         </div>
@@ -24,33 +24,29 @@
           <%= f.text_field :lname, autocomplete: "lname", :required => true, :placeholder => "Last Name", :class => "form-control" %>
         </div>        
       </div>
-      <br>
-      
+
       <div class="form-group">
+        <%= f.text_field :phone_number, autocomplete: "phone_number", :required => true, :placeholder => "Phone Number", :class => "form-control" %>
       </div>
-      
-      <div class="form-group">
-        <button class="btn btn-default btn-sm" type="button" id="passchange" onclick="showHidePass()">Change Password?</button>
-      </div>
-      
-      <div id="passblock" style="display:none" >
-        <div class="form-row">
-          <div class="col">
-            <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password (Min 6 chars)", :class => "form-control" %>
-          </div>
-          <div class="col">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm new password", :class => "form-control" %>
-          </div>
+
+      <div class="form-group form-row">
+        <div class="col">
+          <%= f.text_field :street, :required => true, :placeholder => "Street", :class => "form-control" %>
         </div>
-        <br>
-      
-        <div class="form-group">
-          <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
-          <small id="passwordHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
+        <div class="col">
+          <%= f.text_field :city, :required => true, :placeholder => "City", :class => "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group form-row">
+        <div class="col">
+          <%= f.text_field :state, :required => true, :placeholder => "State", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.text_field :zip_code, :required => true, :placeholder => "Zip Code", :class => "form-control" %>
         </div>
       </div>
       
-    
       <div class="actions">
         <%= f.submit "Update My Account", :class => "btn btn-primary btn-block" %>
       </div>

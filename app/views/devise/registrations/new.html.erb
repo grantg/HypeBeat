@@ -21,10 +21,19 @@
       
       <div class="form-row">
         <div class="col">
-          <%= f.date_field :birth_date, :required => true, autocomplete: "birthday", :placeholder => "Birthday", :class => "form-control" %>
+          <%= f.text_field :street, :required => true, :placeholder => "Street", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :favorite_class, :required => true, :placeholder => "Favorite Class", :class => "form-control" %>
+          <%= f.text_field :city, :required => true, :placeholder => "City", :class => "form-control" %>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col">
+          <%= f.text_field :state, :required => true, :placeholder => "State", :class => "form-control" %>
+        </div>
+        <div class="col">
+          <%= f.text_field :zip_code, :required => true, :placeholder => "Zip Code", :class => "form-control" %>
         </div>
       </div>
       <br>

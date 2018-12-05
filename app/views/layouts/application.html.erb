@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Super Breaks-A-Lot 9000</title>
+    <title>hypeBeat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/sidenavandheader' %>
     <%= yield %>
     
     <% unless flash.empty? %>
