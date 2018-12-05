@@ -11,8 +11,6 @@
                 <p><%= @user.street %></p>
                 <p><%= @user.city%>, <%= @user.state%></p>
                 <p><%= @user.zip_code %></p>
-                <p>Birthday:</p>
-                <p><%= @user.birth_date.try(:strftime, "%l:%M %p") %></p>
         </div>
         <div class="text-center">
             <%= link_to 'Back', root_path, :class => "btn btn-light btn-sm" %> 
