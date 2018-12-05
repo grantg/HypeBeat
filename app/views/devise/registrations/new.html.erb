@@ -45,6 +45,7 @@
           <%= f.text_field :card_num, autofocus: true, :required => true, :placeholder => "Credit Card Number", :class => "form-control" %>
       </div>
       
+      <small id="creditHelp" class="form-text text-muted">Your Exp. Month, Year, and CVC will not be stored.</small>
       <div class="form-group form-row">
         <div class="col">
           <input type="text" class= "form-control" placeholder= "Exp. Month" name="expiration_month">
@@ -56,7 +57,7 @@
           <input type="text" class= "form-control" placeholder= "CVC" name="cvc">
         </div>
       </div>
-      
+
       <div class="form-group">
         <%= f.password_field :password, autocomplete: "new-password", :required => true,:placeholder => "Password (6 characters minimum)", :class => "form-control" %>
       </div>
