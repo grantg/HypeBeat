@@ -1,3 +1,4 @@
+<% javascript_include_tag "hide-password" %>
 <div class="col-md-12">
   <div class="offset-md-4 col-md-4 container-login">
     <h2 class="h2 text-center">Edit My Profile</h2>
@@ -14,32 +15,37 @@
           <%= f.date_field :birth_date, autocomplete: "birthday", :required => true, :placeholder => "Birthday", :class => "form-control" %>
         </div>
         <div class="col">
-          <%= f.text_field :favorite_class, :required => true, :placeholder => "Favorite Class", :class => "form-control" %>
-        </div>
-      </div>
-      <br>
-      
-      <div class="form-row">
-        <div class="col">
-          <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password (Min 6 chars)", :class => "form-control" %>
-        </div>
-        <div class="col">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm new password", :class => "form-control" %>
         </div>
       </div>
       <br>
       
       <div class="form-group">
-        <%= f.text_area :bio, :placeholder => "Tell us about yourself! In 250 characters or less*", :maxlength => 250, :required => true, :class => "form-control" %>
       </div>
-    
+      
       <div class="form-group">
-        <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
-        <small id="passwordHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
+        <button class="btn btn-default btn-sm" type="button" id="passchange" onclick="showHidePass()">Change Password?</button>
       </div>
+      
+      <div id="passblock" style="display:none" >
+        <div class="form-row">
+          <div class="col">
+            <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password (Min 6 chars)", :class => "form-control" %>
+          </div>
+          <div class="col">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "Confirm new password", :class => "form-control" %>
+          </div>
+        </div>
+        <br>
+      
+        <div class="form-group">
+          <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => "Please confirm your current password.", :class => "form-control" %>
+          <small id="passwordHelp" class="form-text text-muted">We need to confirm this for security reasons.</small>
+        </div>
+      </div>
+      
     
       <div class="actions">
-        <%= f.submit "Update", :class => "btn btn-primary btn-block" %>
+        <%= f.submit "Update My Account", :class => "btn btn-primary btn-block" %>
       </div>
     <% end %>
     
@@ -50,7 +56,7 @@
     <hr>
     <div class="text-center">
       <p>Unhappy with your experience?</p>
-      <%= button_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger btn-block" %>
+      <%= button_to "Close My Account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger btn-block" %>
     </div>
   </div>
 </div>
