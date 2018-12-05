@@ -1,9 +1,20 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :is_allowed, only: [:edit, :update, :show, :destroy]
+  before_action :block_access, only: [:index]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
+  
+  def is_allowed
+    @user = User.find(params[:id])
+    redirect_to root_path unless current_user.id == @user.id
+  end
+  
+  def block_access
+    redirect_to root_path
+  end
+  
   def index
     @users = User.all
   end
