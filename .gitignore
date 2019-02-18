@@ -28,5 +28,6 @@
 .byebug_history
 
 /.c9
+/.c9/metadata
 # Ignore master key for decrypting credentials and more.
 /config/master.key
